@@ -1,0 +1,5 @@
+# Workaround for a broken rustup/lld wrapper on this machine:
+# <toolchain>/lib/rustlib/.../bin/gcc-ld/ld.lld execs a Nix path that no longer exists,
+# so link through binutils' ld instead of the bundled lld.
+[target.x86_64-unknown-linux-gnu]
+rustflags = ["-C", "link-arg=-fuse-ld=bfd"]

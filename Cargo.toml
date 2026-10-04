@@ -1,0 +1,15 @@
+[package]
+name = "tetris-tui"
+version = "0.1.0"
+edition = "2021"
+license = "MIT"
+description = "A Guideline-style Tetris for the terminal (ratatui)"
+
+[dependencies]
+ratatui = "0.29"
+crossterm = "0.28"
+
+[profile.release]
+opt-level = 3
+lto = true
+strip = true
